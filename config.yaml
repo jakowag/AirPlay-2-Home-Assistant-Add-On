@@ -1,0 +1,32 @@
+name: "AirPlay 2 for Home Assistant (Shairport-Sync)"
+description: "AirPlay 2  Add-On for Home Assistant based on Shairport-Sync"
+url: https://github.com/jakowag/AirPlay-2-Home-Assistant-Add-On
+version: "0.0.1"
+slug: "airplay2"
+init: false # set to false as s-6 overlay is used
+arch:
+  - aarch64
+  - amd64
+  - armv7
+boot: "auto"
+host_network: true
+audio: true
+options:
+  airplay_name: "Home Assistant"
+  output_backend: "pa"
+  offset: "0.0"
+  mqtt_enabled: "no"
+  mqtt_host: "core-mosquitto"
+  mqtt_username: "user"
+  mqtt_password: "password"
+  mqtt_publish_cover: "no"
+
+schema:
+  airplay_name: str
+  output_backend: str
+  offset: str
+  mqtt_enabled: str
+  mqtt_host: str
+  mqtt_username: str
+  mqtt_password: password
+  mqtt_publish_cover: str

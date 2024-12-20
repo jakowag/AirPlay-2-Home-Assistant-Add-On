@@ -1,0 +1,21 @@
+configuration:
+  airplay_name:
+    name: Airplay Name
+    description: >-
+      The Name that will show up on your iOS device.
+  output_backend::
+    name: output_backend
+    description: >-
+      The backend that will be used to output the audio. Is set to pa for PulseAudio which is wired from Home Assistant OS (host) into the Add-On. Can also be e.g. alsa.
+  offset:
+    name: Playback offset
+    description: >-
+      Can be used to adjust syncing issues, can also be set to negative values.
+  mqtt_enabled:
+    name: Enable MQTT
+    description: >-
+      Set to "no" to disable MQTT, and to "yes" to enable it.
+  mqtt_publish_cover:
+    name: MQTT publish cover
+    description: >-
+      When set to yes, it allows MQTT to transmit the cover (might lead to more load on the MQTT borker)
