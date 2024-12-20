@@ -98,9 +98,9 @@ COPY --from=builder /shairport-sync/build/install/etc/shairport-sync.conf.sample
 COPY --from=builder /shairport-sync/build/install/etc/dbus-1/system.d/shairport-sync-dbus.conf /etc/dbus-1/system.d/
 COPY --from=builder /shairport-sync/build/install/etc/dbus-1/system.d/shairport-sync-mpris.conf /etc/dbus-1/system.d/
 
-WORKDIR /shairport-sync
-COPY ./docker/etc/s6-overlay/s6-rc.d /etc/s6-overlay/s6-rc.d
-COPY ./docker/etc/pulse /etc/pulse
+#WORKDIR /shairport-sync
+COPY ./etc/s6-overlay/s6-rc.d /etc/s6-overlay/s6-rc.d
+COPY ./etc/pulse /etc/pulse
 RUN chmod +x /etc/s6-overlay/s6-rc.d/01-startup/script.sh
 
 # Create non-root user for running the container -- running as the user 'shairport-sync' also allows
@@ -125,7 +125,7 @@ RUN rm -rf /etc/avahi/services/*.service
 # COPY bootstrap.sh /start
 # RUN chmod +x /start
 
-WORKDIR /
+#WORKDIR /
 COPY apply-options.sh apply-options.sh
 COPY shairport-sync.conf /etc/shairport-sync.conf
 
